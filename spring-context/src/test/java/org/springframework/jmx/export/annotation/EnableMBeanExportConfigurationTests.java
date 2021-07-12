@@ -251,7 +251,7 @@ public class EnableMBeanExportConfigurationTests {
 		@Bean
 		@Lazy
 		public Object notLoadable() throws Exception {
-			return Class.forName("does.not.exist").newInstance();
+			return Class.forName("does.not.exist").getDeclaredConstructor().newInstance();
 		}
 	}
 

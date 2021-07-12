@@ -312,7 +312,7 @@ public class CallbacksSecurityTests {
 		Class<ConstructorBean> cl = ConstructorBean.class;
 		assertThatExceptionOfType(Exception.class).isThrownBy(() ->
 				AccessController.doPrivileged((PrivilegedExceptionAction<Object>) () ->
-						cl.newInstance(), acc));
+						cl.getDeclaredConstructor().newInstance(), acc));
 	}
 
 	@Test

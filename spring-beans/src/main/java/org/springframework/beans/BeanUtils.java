@@ -108,7 +108,7 @@ public abstract class BeanUtils {
 			throw new BeanInstantiationException(clazz, "Specified class is an interface");
 		}
 		try {
-			return clazz.newInstance();
+			return clazz.getDeclaredConstructor().newInstance();
 		}
 		catch (InstantiationException ex) {
 			throw new BeanInstantiationException(clazz, "Is it an abstract class?", ex);
